@@ -20,6 +20,9 @@ Route::get('/', function () {
 });
 
 Route::get('/allProducts',[productController::class,'index']);
+Route::post('/allProducts',[productController::class,'store']);
+
+
 Route::get('/allProducts/create',[productController::class,'create']);
 Route::get('/allProducts/{id}',[productController::class,'show']);
 
