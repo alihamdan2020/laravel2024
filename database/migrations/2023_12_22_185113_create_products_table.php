@@ -17,6 +17,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('productName');
             $table->float('productPrice');
+            // first step - code below mean i want to insert into DB a json object
+            $table->json('ingredients');
 
         });
     }

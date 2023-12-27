@@ -25,9 +25,36 @@ class productController extends Controller
       return (view('products.create'));
     }
 
-    public function store(){
+    public function store(Request $req){
 
-      return redirect('/allProducts');
+      $req->validate([
+        'productName' => 'required',
+        'productPrice' => 'required|numeric|gt:0',
+        'ingredients' => 'required|array|min:1'
+    ],
+  [
+    'productName.required'=>"this filed is obligatory",
+    'productPrice.required'=>"this filed is obligatory",
+    'productPrice.numeric'=>"this filed must contain numbers",
+    'productPrice.gt'=>"no negative numbers",
+    'ingredients.required' =>'at least one'
+
+  ]);
+
+      $product=new Product();
+      // we create a new product record
+      $product->productName=request('productName');
+      $product->productPrice=request('productPrice');
+      $product->ingredients=request('ingredients');
+
+      // let show the new record record in erminal find for the object had created
+      //{"productName":"pepsi", "productPrice":1200}
+      //error_log($product);
+      $product->save();
+      
+
+      //note that is redirect i can not send an array as return view
+      return redirect('/')->with('msg','order has been added succefully');
 
     }
     

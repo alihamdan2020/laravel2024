@@ -2,7 +2,23 @@
 margin:0;
 padding:0;
 box-sizing: border-box;
-
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+:root{
+  --mainColor:#33186B;
+}
+a{
+  text-decoration: none;
+  text-transform: capitalize;
+  color:var(--mainColor);
+  font-weight: lighter;
+}
+h1{
+  color:var(--mainColor);
+  text-align: center;
+  text-transform:capitalize;
+  font-weight: lighter;
+  margin-block: 20px;
 }
 .container{
   width:min(900px,100%);
@@ -18,5 +34,59 @@ box-sizing: border-box;
 .parent .product{
   width:150px;
   min-height: 75px;
-  border:2px solid green;
+  border:2px solid var(--mainColor);
+  padding:10px;
+  border-radius: 5px;
+}
+
+.parent .product .content{
+  display: block;
+  margin-left:10px;
+  color:var(--mainColor);
+  font-weight: bold;
+
+}
+
+/*welcome view*/
+.mainDiv{
+  position: absolute;
+  inset:30%;
+  border:0px solid green;
+}
+.mainDiv img{
+  width:100%;
+}
+
+.mainDiv nav ul{
+display: flex;
+justify-content: space-between;
+align-items: center;
+list-style-type: none;
+}
+
+/*create view*/
+.labelnput{
+  margin-block: 10px;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+}
+.labelnput input{
+  width:200px;
+  color:var(--mainColor);
+  padding:5px
+}
+.labelnput label{
+  margin-block: 5px;
+  text-transform: capitalize;
+}
+.labelnput:has(input[type="submit"]){
+justify-content: flex-end;
+}
+input[type="submit"]{
+background-color: var(--mainColor);
+color:wheat;
+  border:0px;
+  padding:5px;
+  width:100px;
 }
