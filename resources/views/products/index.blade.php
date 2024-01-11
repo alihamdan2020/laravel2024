@@ -8,16 +8,8 @@ show all products
 <h1>all products</h1>
 <div class="parent">
 @foreach ($allProducts as $product)
-<div class="product">
-<p><span>Product Name </span><span class="content"> {{$product->productName}}</span></p>
-<p><span>Price</span><span class="content">{{$product->productPrice}}</span></p>
-<p>
-  <span>Ingrendients</span>
-  @foreach($product->ingredients as $ingredient)
-    <span class="content">{{$ingredient}}</span>
-  @endforeach  
-</p>
-</div>
+<x-pizza-card :a=$product />
+
 @endforeach
 </div>
 

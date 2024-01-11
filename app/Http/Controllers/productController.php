@@ -52,9 +52,24 @@ class productController extends Controller
       //error_log($product);
       $product->save();
       
+      
 
       //note that is redirect i can not send an array as return view
       return redirect('/')->with('msg','order has been added succefully');
+
+    }
+
+    public function destroy($id){
+      $singleProduct=Product::findorfail($id);
+      $singleProduct->delete();
+      
+      
+      return redirect('/')->with('msg','record has been deleted succefully');
+      // note : if i make return view(index) for example, rememeber that
+      // if you want return view index, sholud run the same sql runned previously
+      //when we return index
+      //we can make return redirect to any route like '/allProducts'
+      
 
     }
     

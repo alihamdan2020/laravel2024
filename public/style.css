@@ -24,7 +24,7 @@ h1{
   width:min(900px,100%);
   margin: 0 auto;
 }
-
+/* index view */
 .parent{
   display:flex;
   align-items: center;
@@ -33,10 +33,13 @@ h1{
 }
 .parent .product{
   width:150px;
-  min-height: 75px;
+  min-height: 215px;
   border:2px solid var(--mainColor);
   padding:10px;
   border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .parent .product .content{
@@ -46,7 +49,20 @@ h1{
   font-weight: bold;
 
 }
-
+.links{
+  display:flex;
+  justify-content: space-between;
+  border:0px solid green;
+  margin-top: auto;
+}
+.links button{
+  color:red;
+  background-color: transparent;
+  outline:0;
+  border: 0;
+  text-transform: capitalize;
+  cursor: pointer;
+}
 /*welcome view*/
 .mainDiv{
   position: absolute;
@@ -63,6 +79,7 @@ justify-content: space-between;
 align-items: center;
 list-style-type: none;
 }
+
 
 /*create view*/
 .labelnput{
