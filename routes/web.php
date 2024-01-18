@@ -24,7 +24,12 @@ Route::post('/allProducts',[productController::class,'store']);
 
 
 Route::get('/allProducts/create',[productController::class,'create']);
+Route::get('/allProducts/update/{product}',[productController::class,'update']);
+Route::put('/allProducts/update/{product}',[productController::class,'edit']);
+
 Route::get('/allProducts/{id}',[productController::class,'show'])->name('showSpecItem');
+
+
 Route::delete('/allProducts/{id}',[productController::class,'destroy']);
 // if i want use href, i should create new route like below (not recommende it)
 // Route::get('/newRoute/{id}',[productController::class,'destroy']);

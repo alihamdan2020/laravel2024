@@ -72,5 +72,20 @@ class productController extends Controller
       
 
     }
+
+    public function update(Product $product){
+      //instead of passing id i pass an Product object, shoul be same name in route
+      return view('products.update',['singleProduct'=>$product]);
+    }
+
+    public function edit(Product $product,Request $req){
+      $formFields=  $req->validate([
+        'productName' => 'required',
+        'productPrice' => 'required|numeric|gt:0',
+      
+      ]);
+      $product->update($formFields);
+      return redirect('/allProducts');
+    }
     
 }

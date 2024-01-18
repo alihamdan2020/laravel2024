@@ -9,6 +9,7 @@
 </div>
 <div class="links">
   <a href="/allProducts/{{$product->id}}">details</a>
+  <a href="/allProducts/update/{{$product->id}}">update</a>
 
   <!-- same <a href="{{route('showSpecItem',$product->id)}}">details</a> 
   about route name go to web.php -->
